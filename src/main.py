@@ -5,16 +5,13 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv("C:\\Users\\Vivupadi\\Desktop\\Music_recommender\\src\Auth.env")
 
-client_id = os.getenv("client_id")
-client_secret = os.getenv("client_secret")
-
-
-SPOTIFY_CLIENT_ID = client_id
-SPOTIFY_CLIENT_SECRET = client_secret
+SPOTIFY_CLIENT_ID = os.getenv('client_id')
+SPOTIFY_CLIENT_SECRET = os.getenv('client_secret')
 SPOTIFY_REDIRECT_URI = 'http://localhost:8888/callback'
 
+#breakpoint()
 sp =  spotipy.Spotify(auth_manager=SpotifyOAuth(
     client_id=SPOTIFY_CLIENT_ID,
     client_secret=SPOTIFY_CLIENT_SECRET,
